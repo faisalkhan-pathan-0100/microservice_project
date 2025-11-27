@@ -31,14 +31,14 @@ public class RatingController {
     }
 
     //get rating by user id
-    @GetMapping("/{id}")
+    @GetMapping("/users/{id}")
     public ResponseEntity<List<Rating>> getAllRatingByUserId(@PathVariable String id){
         return ResponseEntity.status(HttpStatus.OK).body(ratingService.getRatingsByUser(id));
     }
 
 
     //get rating by hotel id
-    @GetMapping("/{id}")
+    @GetMapping("/hotels/{id}")
     public ResponseEntity<List<Rating>> getAllRatingByHotelId(@PathVariable String id){
         return ResponseEntity.status(HttpStatus.OK).body(ratingService.getRatingsByHotel(id));
     }

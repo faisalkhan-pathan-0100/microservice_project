@@ -3,7 +3,7 @@ server :
 
 spring :
   datasource :
-    url : jdbc:mysql://localhost:3306/microservice
+    url : jdbc:mysql://localhost:3306/hotelservicedatabase
     username : root
     password : cdac
 
