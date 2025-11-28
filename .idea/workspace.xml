@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6baa7e04-6de4-4e9d-8e10-7a2dfcef18ef" name="Changes" comment="to make the dynamic api call for communication between the microservice define the Service name in application.properties file and use it instead of hostname and port">
+    <list default="true" id="6baa7e04-6de4-4e9d-8e10-7a2dfcef18ef" name="Changes" comment="communication between microservices by using feign client instead of RestTemplate and for that add Feign Client dependency in UserService then create the Interface of HotelService(as we have to call the HotelService api).">
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServiceRegistory/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ServiceRegistory/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/src/main/java/com/faisal/user/service/UserServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/src/main/java/com/faisal/user/service/UserServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/src/main/java/com/faisal/user/service/services/impls/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/src/main/java/com/faisal/user/service/services/impls/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +51,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Application.ApiGatewayApplication.executor&quot;: &quot;Run&quot;,
     &quot;Application.HotelServiceApplication.executor&quot;: &quot;Run&quot;,
     &quot;Application.RatingServiceApplication.executor&quot;: &quot;Run&quot;,
     &quot;Application.ServiceRegistoryApplication.executor&quot;: &quot;Run&quot;,
@@ -63,9 +62,9 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -73,7 +72,20 @@
       <recent name="com.faisal.user.service.entities" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ServiceRegistoryApplication">
+  <component name="RunManager" selected="Application.ApiGatewayApplication">
+    <configuration name="ApiGatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.faisal.gateway.ApiGatewayApplication" />
+      <module name="ApiGateway" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.faisal.gateway.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HotelServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.faisal.hotel.HotelServiceApplication" />
       <module name="HotelService" />
@@ -128,10 +140,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ServiceRegistoryApplication" />
-        <item itemvalue="Application.RatingServiceApplication" />
-        <item itemvalue="Application.HotelServiceApplication" />
+        <item itemvalue="Application.ApiGatewayApplication" />
         <item itemvalue="Application.UserServiceApplication" />
+        <item itemvalue="Application.HotelServiceApplication" />
+        <item itemvalue="Application.RatingServiceApplication" />
+        <item itemvalue="Application.ServiceRegistoryApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -223,7 +236,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764307930995</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="communication between microservices by using feign client instead of RestTemplate and for that add Feign Client dependency in UserService then create the Interface of HotelService(as we have to call the HotelService api).">
+      <option name="closed" value="true" />
+      <created>1764313716902</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1764313716902</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -237,6 +258,7 @@
     <MESSAGE value="inter-communication between microservice through rest api call like fetch single user then for rating call the rest api end point of RatingService which gives all the rating by user and also inside the rating to fetch the hotel details for which rating is done call the api end point of HotelService" />
     <MESSAGE value="to make is dynamic api call for communication between the microservice define the Service name in application.properties file and use it instead of hostname and port" />
     <MESSAGE value="to make the dynamic api call for communication between the microservice define the Service name in application.properties file and use it instead of hostname and port" />
-    <option name="LAST_COMMIT_MESSAGE" value="to make the dynamic api call for communication between the microservice define the Service name in application.properties file and use it instead of hostname and port" />
+    <MESSAGE value="communication between microservices by using feign client instead of RestTemplate and for that add Feign Client dependency in UserService then create the Interface of HotelService(as we have to call the HotelService api)." />
+    <option name="LAST_COMMIT_MESSAGE" value="communication between microservices by using feign client instead of RestTemplate and for that add Feign Client dependency in UserService then create the Interface of HotelService(as we have to call the HotelService api)." />
   </component>
 </project>
