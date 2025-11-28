@@ -16,4 +16,6 @@ public class Rating {
     private String hotelId;   // to know for which hotel rating is given
     private int rating;       // what rating given to particular hotel out of 5
     private String feedback;  // given feedback from user to hotel
+
+    private Hotel hotel;
 }
