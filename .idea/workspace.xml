@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6baa7e04-6de4-4e9d-8e10-7a2dfcef18ef" name="Changes" comment="communication between microservices by using feign client instead of RestTemplate and for that add Feign Client dependency in UserService then create the Interface of HotelService(as we have to call the HotelService api).">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="6baa7e04-6de4-4e9d-8e10-7a2dfcef18ef" name="Changes" comment="feat: add ApiGateway microservice for routing all client API calls&#10;&#10;- Added a new microservice named ApiGateway so the client can call all other microservice endpoints from a single entry point&#10;- Added required dependencies: spring-cloud-starter-gateway and spring-boot-starter-webflux&#10;- Configured application.yml to define routes for each microservice so all API calls pass through the ApiGateway">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiGateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ApiGateway/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +16,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -141,8 +139,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.ApiGatewayApplication" />
-        <item itemvalue="Application.UserServiceApplication" />
         <item itemvalue="Application.HotelServiceApplication" />
+        <item itemvalue="Application.UserServiceApplication" />
         <item itemvalue="Application.RatingServiceApplication" />
         <item itemvalue="Application.ServiceRegistoryApplication" />
       </list>
@@ -244,7 +242,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764313716902</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="feat: add ApiGateway microservice for routing all client API calls&#10;&#10;- Added a new microservice named ApiGateway so the client can call all other microservice endpoints from a single entry point&#10;- Added required dependencies: spring-cloud-starter-gateway and spring-boot-starter-webflux&#10;- Configured application.yml to define routes for each microservice so all API calls pass through the ApiGateway">
+      <option name="closed" value="true" />
+      <created>1764336723670</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1764336723670</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -259,6 +265,7 @@
     <MESSAGE value="to make is dynamic api call for communication between the microservice define the Service name in application.properties file and use it instead of hostname and port" />
     <MESSAGE value="to make the dynamic api call for communication between the microservice define the Service name in application.properties file and use it instead of hostname and port" />
     <MESSAGE value="communication between microservices by using feign client instead of RestTemplate and for that add Feign Client dependency in UserService then create the Interface of HotelService(as we have to call the HotelService api)." />
-    <option name="LAST_COMMIT_MESSAGE" value="communication between microservices by using feign client instead of RestTemplate and for that add Feign Client dependency in UserService then create the Interface of HotelService(as we have to call the HotelService api)." />
+    <MESSAGE value="feat: add ApiGateway microservice for routing all client API calls&#10;&#10;- Added a new microservice named ApiGateway so the client can call all other microservice endpoints from a single entry point&#10;- Added required dependencies: spring-cloud-starter-gateway and spring-boot-starter-webflux&#10;- Configured application.yml to define routes for each microservice so all API calls pass through the ApiGateway" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add ApiGateway microservice for routing all client API calls&#10;&#10;- Added a new microservice named ApiGateway so the client can call all other microservice endpoints from a single entry point&#10;- Added required dependencies: spring-cloud-starter-gateway and spring-boot-starter-webflux&#10;- Configured application.yml to define routes for each microservice so all API calls pass through the ApiGateway" />
   </component>
 </project>
