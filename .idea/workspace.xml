@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6baa7e04-6de4-4e9d-8e10-7a2dfcef18ef" name="Changes" comment=" add diff database for microservice named HotelService">
-      <change beforePath="$PROJECT_DIR$/HotelService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/HotelService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelService/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/HotelService/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RatingService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/RatingService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RatingService/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/RatingService/src/main/resources/application.yml" afterDir="false" />
+    <list default="true" id="6baa7e04-6de4-4e9d-8e10-7a2dfcef18ef" name="Changes" comment="to make the dynamic api call for communication between the microservice define the Service name in application.properties file and use it instead of hostname and port">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServiceRegistory/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ServiceRegistory/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserService/src/main/java/com/faisal/user/service/UserServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/src/main/java/com/faisal/user/service/UserServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserService/src/main/java/com/faisal/user/service/services/impls/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/src/main/java/com/faisal/user/service/services/impls/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -69,7 +68,12 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.UserServiceApplication">
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.faisal.user.service.entities" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.ServiceRegistoryApplication">
     <configuration name="HotelServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.faisal.hotel.HotelServiceApplication" />
       <module name="HotelService" />
@@ -124,10 +128,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.UserServiceApplication" />
+        <item itemvalue="Application.ServiceRegistoryApplication" />
         <item itemvalue="Application.RatingServiceApplication" />
         <item itemvalue="Application.HotelServiceApplication" />
-        <item itemvalue="Application.ServiceRegistoryApplication" />
+        <item itemvalue="Application.UserServiceApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -179,7 +183,47 @@
       <option name="project" value="LOCAL" />
       <updated>1764241572894</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary=" create ServiceRegistry and register UserService, RatingService, HotelService microservice with it by configuring the application.yml file of all microservice.">
+      <option name="closed" value="true" />
+      <created>1764260111293</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1764260111293</updated>
+    </task>
+    <task id="LOCAL-00007" summary="create separate config file for defining the RestTemplate bean &amp; add the Hotel object as instance field in Rating class of UserService">
+      <option name="closed" value="true" />
+      <created>1764307288566</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1764307288566</updated>
+    </task>
+    <task id="LOCAL-00008" summary="configuration required to register the all microservice to ServiceRegistry.">
+      <option name="closed" value="true" />
+      <created>1764307530990</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1764307530990</updated>
+    </task>
+    <task id="LOCAL-00009" summary="inter-communication between microservice through rest api call like fetch single user then for rating call the rest api end point of RatingService which gives all the rating by user and also inside the rating to fetch the hotel details for which rating is done call the api end point of HotelService">
+      <option name="closed" value="true" />
+      <created>1764307739478</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1764307739478</updated>
+    </task>
+    <task id="LOCAL-00010" summary="to make the dynamic api call for communication between the microservice define the Service name in application.properties file and use it instead of hostname and port">
+      <option name="closed" value="true" />
+      <created>1764307930995</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1764307930995</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -187,6 +231,12 @@
     <MESSAGE value="add custom finder method in RatingRepository to access the rating by users and by hotels" />
     <MESSAGE value="add 3 layer in Rating microservice like contoller,service,repository" />
     <MESSAGE value=" add diff database for microservice named HotelService" />
-    <option name="LAST_COMMIT_MESSAGE" value=" add diff database for microservice named HotelService" />
+    <MESSAGE value=" create ServiceRegistry and register UserService, RatingService, HotelService microservice with it by configuring the application.yml file of all microservice." />
+    <MESSAGE value="create separate config file for defining the RestTemplate bean &amp; add the Hotel object as instance field in Rating class of UserService" />
+    <MESSAGE value="configuration required to register the all microservice to ServiceRegistry." />
+    <MESSAGE value="inter-communication between microservice through rest api call like fetch single user then for rating call the rest api end point of RatingService which gives all the rating by user and also inside the rating to fetch the hotel details for which rating is done call the api end point of HotelService" />
+    <MESSAGE value="to make is dynamic api call for communication between the microservice define the Service name in application.properties file and use it instead of hostname and port" />
+    <MESSAGE value="to make the dynamic api call for communication between the microservice define the Service name in application.properties file and use it instead of hostname and port" />
+    <option name="LAST_COMMIT_MESSAGE" value="to make the dynamic api call for communication between the microservice define the Service name in application.properties file and use it instead of hostname and port" />
   </component>
 </project>
