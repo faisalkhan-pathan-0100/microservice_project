@@ -4,9 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6baa7e04-6de4-4e9d-8e10-7a2dfcef18ef" name="Changes" comment="feat: add ApiGateway microservice for routing all client API calls&#10;&#10;- Added a new microservice named ApiGateway so the client can call all other microservice endpoints from a single entry point&#10;- Added required dependencies: spring-cloud-starter-gateway and spring-boot-starter-webflux&#10;- Configured application.yml to define routes for each microservice so all API calls pass through the ApiGateway">
+    <list default="true" id="6baa7e04-6de4-4e9d-8e10-7a2dfcef18ef" name="Changes" comment="if multiple controller in single microservice like in HotelService one is HotelController and 2nd is StaffController then we have to configure both end points url in ApiGateway application.ym file and mention path for both controller">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiGateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ApiGateway/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ApiGateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ApiGateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HotelService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/HotelService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HotelService/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/HotelService/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RatingService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/RatingService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RatingService/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/RatingService/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserService/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +60,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Application.ApiGatewayApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ConfigServerApplication.executor&quot;: &quot;Run&quot;,
     &quot;Application.HotelServiceApplication.executor&quot;: &quot;Run&quot;,
     &quot;Application.RatingServiceApplication.executor&quot;: &quot;Run&quot;,
     &quot;Application.ServiceRegistoryApplication.executor&quot;: &quot;Run&quot;,
@@ -70,13 +81,26 @@
       <recent name="com.faisal.user.service.entities" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ApiGatewayApplication">
+  <component name="RunManager" selected="Application.RatingServiceApplication">
     <configuration name="ApiGatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.faisal.gateway.ApiGatewayApplication" />
       <module name="ApiGateway" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.faisal.gateway.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConfigServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.faisal.configserver.ConfigServerApplication" />
+      <module name="ConfigServer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.faisal.configserver.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -110,19 +134,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ServiceRegistoryApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.faisal.serviceregistory.ServiceRegistoryApplication" />
-      <module name="ServiceRegistory" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.faisal.serviceregistory.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="UserServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.faisal.user.service.UserServiceApplication" />
       <module name="UserService" />
@@ -138,11 +149,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ApiGatewayApplication" />
+        <item itemvalue="Application.RatingServiceApplication" />
         <item itemvalue="Application.HotelServiceApplication" />
         <item itemvalue="Application.UserServiceApplication" />
-        <item itemvalue="Application.RatingServiceApplication" />
-        <item itemvalue="Application.ServiceRegistoryApplication" />
+        <item itemvalue="Application.ApiGatewayApplication" />
+        <item itemvalue="Application.ConfigServerApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -250,7 +261,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764336723670</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="if multiple controller in single microservice like in HotelService one is HotelController and 2nd is StaffController then we have to configure both end points url in ApiGateway application.ym file and mention path for both controller">
+      <option name="closed" value="true" />
+      <created>1764339083337</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1764339083337</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -266,6 +285,7 @@
     <MESSAGE value="to make the dynamic api call for communication between the microservice define the Service name in application.properties file and use it instead of hostname and port" />
     <MESSAGE value="communication between microservices by using feign client instead of RestTemplate and for that add Feign Client dependency in UserService then create the Interface of HotelService(as we have to call the HotelService api)." />
     <MESSAGE value="feat: add ApiGateway microservice for routing all client API calls&#10;&#10;- Added a new microservice named ApiGateway so the client can call all other microservice endpoints from a single entry point&#10;- Added required dependencies: spring-cloud-starter-gateway and spring-boot-starter-webflux&#10;- Configured application.yml to define routes for each microservice so all API calls pass through the ApiGateway" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add ApiGateway microservice for routing all client API calls&#10;&#10;- Added a new microservice named ApiGateway so the client can call all other microservice endpoints from a single entry point&#10;- Added required dependencies: spring-cloud-starter-gateway and spring-boot-starter-webflux&#10;- Configured application.yml to define routes for each microservice so all API calls pass through the ApiGateway" />
+    <MESSAGE value="if multiple controller in single microservice like in HotelService one is HotelController and 2nd is StaffController then we have to configure both end points url in ApiGateway application.ym file and mention path for both controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="if multiple controller in single microservice like in HotelService one is HotelController and 2nd is StaffController then we have to configure both end points url in ApiGateway application.ym file and mention path for both controller" />
   </component>
 </project>
