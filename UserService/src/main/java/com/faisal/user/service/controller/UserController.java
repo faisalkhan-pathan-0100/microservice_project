@@ -2,6 +2,7 @@ package com.faisal.user.service.controller;
 
 import com.faisal.user.service.entities.User;
 import com.faisal.user.service.services.UserService;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,8 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+
 
     //create user POST http://localhost:8081/users
     @PostMapping
@@ -34,6 +37,7 @@ public class UserController {
 
     // get single user http://localhots:8081/users/{id}
     @GetMapping("/{id}")
+    @CircuitBreaker(name="ratingHotelBreaker",fallbackMethod = "ratingHotelFallback")
     public ResponseEntity<User> user(@PathVariable String id){
         return ResponseEntity
                 .status(HttpStatus.OK)
@@ -59,5 +63,24 @@ public class UserController {
     @PatchMapping("{id}")
     public ResponseEntity<User> partialUpdateUser(@PathVariable String id, @RequestBody Map<String,Object> field){
         return ResponseEntity.status(HttpStatus.OK).body(userService.partialUpdateUser(id,field));
+    }
+
+
+
+    /*
+        create fallback method for circuit breaker ratingHotelBreaker in which USER-SERVICE first call the
+        Rating-Service to fetch the ratings by one user then each rating required the hotel detail and for that
+        Rating-Service call the Hotel-Service
+     */
+    public ResponseEntity<User> ratingHotelFallback(String userId, Exception ex){
+        System.out.println("fallback is executed because service is down "+ex.getMessage());
+        User user = User.builder()
+                .userId("1234")
+                .name("dummy")
+                .email("dummy@gamil.com")
+                .about("this dummy user is created due to some service is down")
+                .build();
+        return ResponseEntity.status(HttpStatus.OK).body(user);
+
     }
 }
