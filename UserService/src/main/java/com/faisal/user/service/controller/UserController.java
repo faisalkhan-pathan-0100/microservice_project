@@ -3,6 +3,7 @@ package com.faisal.user.service.controller;
 import com.faisal.user.service.entities.User;
 import com.faisal.user.service.services.UserService;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.retry.annotation.Retry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +19,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    int retryCount = 1;
 
 
     //create user POST http://localhost:8081/users
@@ -37,8 +39,11 @@ public class UserController {
 
     // get single user http://localhots:8081/users/{id}
     @GetMapping("/{id}")
-    @CircuitBreaker(name="ratingHotelBreaker",fallbackMethod = "ratingHotelFallback")
+//    @CircuitBreaker(name="ratingHotelBreaker",fallbackMethod = "ratingHotelFallback")
+    @Retry(name="ratingHotelServiceRetry", fallbackMethod="ratingHotelFallback")
     public ResponseEntity<User> user(@PathVariable String id){
+
+        System.out.println(retryCount);retryCount++;
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(userService.getSingleUser(id));
@@ -80,6 +85,7 @@ public class UserController {
                 .email("dummy@gamil.com")
                 .about("this dummy user is created due to some service is down")
                 .build();
+        retryCount = 1;
         return ResponseEntity.status(HttpStatus.OK).body(user);
 
     }

@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6baa7e04-6de4-4e9d-8e10-7a2dfcef18ef" name="Changes" comment="config-server implementation in which one repo created for common application.yml file configuration for all microservice then Config-Server microservice clone that repo with clone-on-start then other service fetch that configuration from Config-Server.&#10;required dependency for Config-Server -&gt; spring-cloud-config-server.&#10;required dependency for other microservice -&gt; spring-cloud-starter-config(config client)">
+    <list default="true" id="6baa7e04-6de4-4e9d-8e10-7a2dfcef18ef" name="Changes" comment="fault tolerance implementation with circuit breaker mechanism and added dependency for that -&gt; spring-boot-starter-actuator, spring-boot-starter-aop, resilience4j-spring-boot2&#10;&#10;- define the fallbackMethod in-case any of the dependent microservice is down&#10;- configure the User-Service application.yml file for fault tolerance and health checke">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserService/src/main/java/com/faisal/user/service/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/src/main/java/com/faisal/user/service/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserService/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/UserService/src/main/resources/application.yml" afterDir="false" />
     </list>
@@ -143,8 +142,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.UserServiceApplication" />
-        <item itemvalue="Application.HotelServiceApplication" />
         <item itemvalue="Application.RatingServiceApplication" />
+        <item itemvalue="Application.HotelServiceApplication" />
         <item itemvalue="Application.ApiGatewayApplication" />
         <item itemvalue="Application.ConfigServerApplication" />
       </list>
@@ -270,7 +269,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764412330911</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="fault tolerance implementation with circuit breaker mechanism and added dependency for that -&gt; spring-boot-starter-actuator, spring-boot-starter-aop, resilience4j-spring-boot2&#10;&#10;- define the fallbackMethod in-case any of the dependent microservice is down&#10;- configure the User-Service application.yml file for fault tolerance and health checke">
+      <option name="closed" value="true" />
+      <created>1764435716773</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1764435716773</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -288,6 +295,7 @@
     <MESSAGE value="feat: add ApiGateway microservice for routing all client API calls&#10;&#10;- Added a new microservice named ApiGateway so the client can call all other microservice endpoints from a single entry point&#10;- Added required dependencies: spring-cloud-starter-gateway and spring-boot-starter-webflux&#10;- Configured application.yml to define routes for each microservice so all API calls pass through the ApiGateway" />
     <MESSAGE value="if multiple controller in single microservice like in HotelService one is HotelController and 2nd is StaffController then we have to configure both end points url in ApiGateway application.ym file and mention path for both controller" />
     <MESSAGE value="config-server implementation in which one repo created for common application.yml file configuration for all microservice then Config-Server microservice clone that repo with clone-on-start then other service fetch that configuration from Config-Server.&#10;required dependency for Config-Server -&gt; spring-cloud-config-server.&#10;required dependency for other microservice -&gt; spring-cloud-starter-config(config client)" />
-    <option name="LAST_COMMIT_MESSAGE" value="config-server implementation in which one repo created for common application.yml file configuration for all microservice then Config-Server microservice clone that repo with clone-on-start then other service fetch that configuration from Config-Server.&#10;required dependency for Config-Server -&gt; spring-cloud-config-server.&#10;required dependency for other microservice -&gt; spring-cloud-starter-config(config client)" />
+    <MESSAGE value="fault tolerance implementation with circuit breaker mechanism and added dependency for that -&gt; spring-boot-starter-actuator, spring-boot-starter-aop, resilience4j-spring-boot2&#10;&#10;- define the fallbackMethod in-case any of the dependent microservice is down&#10;- configure the User-Service application.yml file for fault tolerance and health checke" />
+    <option name="LAST_COMMIT_MESSAGE" value="fault tolerance implementation with circuit breaker mechanism and added dependency for that -&gt; spring-boot-starter-actuator, spring-boot-starter-aop, resilience4j-spring-boot2&#10;&#10;- define the fallbackMethod in-case any of the dependent microservice is down&#10;- configure the User-Service application.yml file for fault tolerance and health checke" />
   </component>
 </project>
